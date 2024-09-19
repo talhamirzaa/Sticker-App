@@ -1,11 +1,16 @@
 import React from 'react'
-import {saveAs} from "file-saver";
+//import {saveAs} from "file-saver";
 
 export default function StickerItem(props) {
 
-  
-    const handleDownload = () => {
-      saveAs(props.img, 'image.jpg') // put your image url here.
+  //it sends url of sticker!//why
+    const handleShareSticker = () => {
+      const stickerUrl = props.img;
+      const encodedStickerUrl = encodeURIComponent(stickerUrl);
+      const whatsappUrl = `https://wa.me/?text=${encodedStickerUrl}`;
+
+      window.open(whatsappUrl, '_blank');
+      //saveAs(props.img, 'image.jpg') // put your image url here.
     }
 
 
@@ -17,7 +22,7 @@ export default function StickerItem(props) {
         <img src={props.img} className="card-img-top" alt="..."/>
         <div className="card-body">
         <div className="d-grid gap-2 col-6 mx-auto position-relative">
-            <button className="btn btn-outline-dark" type="button" onClick={handleDownload}><b>Download</b></button>
+            <button className="btn btn-outline-dark" type="button" onClick={handleShareSticker}><b>Share</b></button>
             </div>
         </div>
         </div>
