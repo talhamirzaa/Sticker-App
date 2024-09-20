@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <>
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:'rgb(77, 16, 77)'}}>
   <div className="container-fluid">
     <Link className="navbar-brand" to="/" id="nvnm">Stickerz</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
