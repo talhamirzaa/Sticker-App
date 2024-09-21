@@ -24,13 +24,13 @@ export default function Sticker() {
   return (
     <>
     <div className="container my-3">
-        <div className="mx-auto">
-          <h2 style={{color:'purple',marginLeft:'30%'}}>Trending Stickers</h2>
+        <div className="mx-auto d-flex flex-row justify-content-center">
+          <h2 style={{color:'purple'}}>Trending Stickers</h2>
         </div>
-        <div className="row mx-2">
+        <div className="row mx-auto">
         {jsonData.data?.map((element) => {
-            // console.log(element.images.fixed_height.width);
-            return <div className="col-md-4" key={element.id}>
+            // console.log(element.images.fixed_height.width); can change item cols below
+            return <div className="col-md-4" key={element.id}> 
                 <StickerItem img={element.images.fixed_height.url}></StickerItem>
             </div>
         })}
